@@ -624,7 +624,7 @@ void WorldSession::HandleMirrorImageDataRequest(WorldPacket& recvData)
                 else
                     data << uint32(item->GetTemplate()->DisplayInfoID);
             }
-           else
+            else
                 data << uint32(0);
         }
     }
