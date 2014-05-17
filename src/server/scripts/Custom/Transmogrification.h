@@ -54,8 +54,8 @@ public:
     void PresetTransmog(Player* player, Item* itemTransmogrified, uint32 fakeEntry, uint8 slot);
 #endif
 
-    typedef std::unordered<uint64, uint64> transmogData;
-    typedef std::unordered<uint64, transmogData> transmogMap;
+    typedef std::unordered_map<uint64, uint64> transmogData;
+    typedef std::unordered_map<uint64, transmogData> transmogMap;
     transmogMap entryMap; // entryMap[pGUID][iGUID] = entry
     transmogData dataMap; // dataMap[iGUID] = pGUID
 
