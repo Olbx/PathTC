@@ -402,7 +402,7 @@ public:
             }
         }
 
-ifdef PRESETS
+#ifdef PRESETS
         if (sT->EnableSets)
             sT->LoadPlayerSets(playerGUID);
 #endif
