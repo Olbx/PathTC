@@ -2383,6 +2383,11 @@ void Spell::DoAllEffectOnTarget(TargetInfo* target)
                 caster->ToPlayer()->CastItemCombatSpell(unitTarget, m_attackType, procVictim, procEx);
         }
 
+        // Cobra Strikes (can't find any other way that may work)
+        if (m_spellInfo->SpellFamilyName == SPELLFAMILY_HUNTER && m_spellInfo->SpellFamilyFlags[1] & 0x10000000)
+            if (Unit * owner = caster->GetOwner())
+                if (Aura* pAura = owner->GetAura(53257))
+                    pAura->DropCharge();
 
         m_damage = damageInfo.damage;
 
